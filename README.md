@@ -6,6 +6,7 @@
 2. Need to carry previous records, lab results etc.
 
 ** Table : Types and frequencies of missing information **
+
 | Information Missing During Patient Visits  | % Visits |
 | -------------               | ------ |
 | Lab results	                | 45%    |
