@@ -9,13 +9,16 @@ const Detail = require('../models/Detail');
 const { ensureAuthenticated } = require('../config/auth');
 
 router.get('/', (req, res) => res.render('index'));
-router.get('/demo', (req, res) => res.sendFile('index.html'));
 
 router.get('/dashboard', ensureAuthenticated, (req, res) =>
   res.render('dashboard', {
     user: req.user
   })
 );
+
+router.get('/about', (req, res) => {
+    res.render('about');
+});
 
 router.get('/healthbot', ensureAuthenticated, (req, res) => {
     res.render('healthbot')
@@ -64,21 +67,12 @@ router.get('/fetchdetails', ensureAuthenticated, (req, res) => {
     }))();
 });
 
-router.get('/nearbyhospitals', (req, res) => {
+router.get('/nearbyhospitals', ensureAuthenticated, (req, res) => {
     res.render('nearbyhos')
 });
 
-router.get('/map', (req, res) => {
-    getJSON('https://places.cit.api.here.com/places/v1/discover/search?q=hospitals&Geolocation=geo%3A21.16%2C72.78&app_id=bFMMgi801IGuJnfUzjxb&app_code=FrPQGhVOUUkINKpcke3iTA', function(error, response){
-        //console.log(response);
-        var items = response.results.items;
-        console.log(items[0].position);
-        res.render('map', {
-          markers: items,
-
-        })
-    })
-
+router.get('/nearbyms', ensureAuthenticated, (req, res) => {
+  res.render('nearbyms');
 });
 
 router.get('/medicines', ensureAuthenticated, (req, res) => {
