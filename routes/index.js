@@ -64,6 +64,10 @@ router.get('/fetchdetails', ensureAuthenticated, (req, res) => {
     }))();
 });
 
+router.get('/nearbyhospitals', (req, res) => {
+    res.render('nearbyhos')
+});
+
 router.get('/map', (req, res) => {
     getJSON('https://places.cit.api.here.com/places/v1/discover/search?q=hospitals&Geolocation=geo%3A21.16%2C72.78&app_id=bFMMgi801IGuJnfUzjxb&app_code=FrPQGhVOUUkINKpcke3iTA', function(error, response){
         //console.log(response);
