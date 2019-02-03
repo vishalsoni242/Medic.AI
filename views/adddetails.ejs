@@ -1,0 +1,34 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3">
+         Add Previous Treatments Details
+      </h1>
+      <% include ./partials/messages %>
+      <form action="/adddetails" method="POST">
+        <div class="form-group">
+          <label for="name">Name of Doctor</label>
+          <input type="name" id="name" name="doctorname" class="form-control" placeholder="Enter Name" value="<%= typeof name != 'undefined' ? name : '' %>"/>
+        </div>
+        <div class="form-group">
+          <label for="email">Email of Doctor</label>
+          <input type="email" id="email" name="doctoremail" class="form-control" placeholder="Enter Email" value="<%= typeof email != 'undefined' ? email : '' %>"/>
+        </div>
+        <div class="form-group">
+          <label for="disease">Enter Disease Description</label>
+          <input type="textarea" id="disease" name="disease" class="form-control" placeholder="Enter Disease Description"/>
+        </div>
+        <div class="form-group">
+          <label for="diagnosis">Enetr Diagnosis Details</label>
+          <input type="textarea" id="diagnosis" name="diagnosis" class="form-control" placeholder="Enter Diagnosis Details"/>
+        </div>
+        <div class="form-group">
+          <input type="hidden" name="useremail" id="useremail" class="form-control" value="<%= user.email %>"/>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          Register
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

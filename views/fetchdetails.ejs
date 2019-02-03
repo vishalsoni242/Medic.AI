@@ -1,0 +1,53 @@
+<style>
+        table {
+            table-layout: fixed;
+            max-width: 800px;
+            position: relative;
+            overflow: hidden;
+            margin: 0px auto;
+        }
+        td {
+            width: 25%;
+        }
+</style>
+<div class="container">
+    <h1 class="glow text-center">Previous Treatments Details</h1>
+
+    <div style="overflow-x:auto;">
+
+
+            <% prev.forEach(function (st) { %>
+                <table class="table table-hover table-bordered table-stripped" style="background-color:white;">
+                    <thead style="background-color:#3E3F3A;color:white;">
+                        <tr class="table-primay">
+                          <th scope="col">Fields</th>
+                          <th scope="col">Values</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                <tr>
+                    <td> Doctor Name  </td>
+                    <td> <%= st.doctorname %> </td>
+                </tr>
+                <tr>
+                    <td> Doctor Email  </td>
+                    <td> <%= st.doctoremail %> </td>
+                </tr>
+                <tr>
+                    <td> Disease Detail  </td>
+                    <td> <%= st.disease %> </td>
+                </tr>
+                <tr>
+                    <td> Diagnosis </td>
+                    <td> <%= st.diagnosis %> </td>
+                </tr>
+                <tr>
+                    <td> Date </td>
+                    <td> <%= st.date %> </td>
+                </tr>
+                </tbody>
+            </table>
+            <% }) %>
+
+    </div>
+</div>
