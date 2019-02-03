@@ -1,7 +1,67 @@
+<script type="text/javascript">
+    var item = document.getElementById('change');
+    item.innerHTML = "<a class=\"nav-link\" href=\"/users/logout\">Logout</a>";
+    item = document.getElementById('register');
+    item.innerHTML = "";
+</script>
 
-<div class="container">
-    <h1 class="mt-4">Dashboard</h1>
-    <p class="lead mb-3">Welcome <%= user.email %></p>
-    <a href="/users/logout" class="btn btn-secondary">Logout</a>
+<style>
+    #mySidenav a {
+  position: absolute;
+  left: -80px;
+  transition: 0.3s;
+  margin-top: 320px;
+  padding: 15px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
 
+#mySidenav a:hover {
+  left: 0;
+}
+
+#about {
+  top: 20px;
+  background-color: #4CAF50;
+}
+
+#add {
+  top: 80px;
+  background-color: #2196F3;
+}
+
+#fetch {
+  top: 140px;
+  background-color: #f44336;
+}
+
+#search {
+  top: 200px;
+  background-color: #555
+}
+
+#bot {
+  top: 260px;
+  background-color: #0f0f0f;
+}
+
+
+</style>
+<div class="jumbotron">
+  <h2 class="display-4 text-center">Welcome <%= user.name %> </h2>
+  <p class="lead text-center">Medic.AI will be your ultimate Patient Companion</p>
+  <hr class="my-4">
+  <p>Explore our Facilities</p>
+  <p class="lead">
+      <div id="mySidenav" class="sidenav">
+        <a href="/about" id="about">About</a>
+        <a href="/adddetails" id="add">Add</a>
+        <a href="/fetchdetails" id="fetch">Fetch</a>
+        <a href="/medicines" id="search">Search</a>
+        <a href="/healthbot" id="bot">Bot</a>
+    </div>
+  </p>
 </div>
